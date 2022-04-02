@@ -86,11 +86,11 @@ public class Main {
         int divisibleInt = 0, dividerInt = 0;
         System.out.println("Введите делимое:");
         if(scanner.hasNext()){
-            divisible = scanner.nextLong();
+            divisible = scanner.nextDouble();
         }
         System.out.println("Введите делитель:");
         if(scanner.hasNext()){
-            divider = scanner.nextLong();
+            divider = scanner.nextDouble();
         }
         divisibleLong = (long) divisible;
         dividerLong = (long) divider;
@@ -105,11 +105,11 @@ public class Main {
         int multipliInt1 = 0, multipliInt2 = 0;
         System.out.println("Введите 1 множитель:");
         if(scanner.hasNext()){
-            multipli1 = scanner.nextLong();
+            multipli1 = scanner.nextDouble();
         }
         System.out.println("Введите 2 множитель:");
         if(scanner.hasNext()){
-            multipli2 = scanner.nextLong();
+            multipli2 = scanner.nextDouble();
         }
         multipliLong1 = (long) multipli1;
         multipliLong2 = (long) multipli2;
@@ -126,11 +126,11 @@ public class Main {
         System.out.println("Займемся вычитанием!");
         System.out.println("Введите 1 число:");
         if(scanner.hasNext()){
-            number1 = scanner.nextLong();
+            number1 = scanner.nextDouble();
         }
         System.out.println("Введите 2 число:");
         if(scanner.hasNext()){
-            number2 = scanner.nextLong();
+            number2 = scanner.nextDouble();
         }
         numberLong1 = (long) number1;
         numberLong2 = (long) number2;
@@ -140,5 +140,58 @@ public class Main {
         calc.subtraction(numberLong1, numberLong2);
         calc.subtraction(numberInt1, numberInt2);
 
-    }
+        System.out.println("Определяем класс Person");
+        class Person{
+
+            String lastname;//Фамилия
+            String firstname;//Имя
+            String patronymic;//Отчество
+            int age;        // Возраст
+            double height;//Рост
+            double weight;//Вес
+            public void Person()
+            {
+                lastname = "Undefined";
+                age = 22;
+                System.out.println("По умолчанию Person это " + lastname + ", " + age + " года");
+            }
+            public void fullperson(String l, String f, String p, int a, double b, double c)
+            {
+                lastname = l;
+                firstname = f;
+                patronymic = p;
+                age = a;
+                height = b;
+                weight = c;
+                System.out.println(l);
+                System.out.println(f);
+                System.out.println(p);
+                System.out.println("Возраст: " + a);
+                System.out.println("Рост: " + b);
+                System.out.println("Вес: " + c);
+            }
+        }
+        Person person = new Person();//Создается экземпляр класса Person
+        System.out.println("Определяем параметры для класса Person");
+        String lastname = null;//Фамилия
+        String firstname = null;//Имя
+        String patronymic = null;//Отчество
+        int age = 2;        // Возраст
+        double height = 180;//Рост
+        double weight = 99;//Вес
+
+        System.out.println("Введите фамилию:");
+        if(scanner.hasNext()){
+            lastname = scanner.next();
+        }
+        System.out.println("Введите имя:");
+        if(scanner.hasNext()){
+            firstname = scanner.next();
+        }
+        System.out.println("Введите возраст:");
+        if(scanner.hasNext()){
+            age = scanner.nextInt();
+        }
+        person.fullperson(lastname, firstname, patronymic, age, height, weight);
+}
 }
