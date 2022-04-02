@@ -48,12 +48,56 @@ public class Main {
             }
 
         }
-        Calculator calc = new Calculator();//
-        System.out.println("Следующий урок");
+        Calculator calc = new Calculator();//Создается экземпляр класса Calculator
+        System.out.println("Задание № 2");
+        double summand1 = 0, summand2 = 0;
+        long summandLong1 = 0L, summandLong2 = 0L;
+        int summandInt1 = 0, summandInt2 = 0;
         System.out.println("Введите 1 слагаемое:");
         if(scanner.hasNext()){
-            calc.sum(scanner.nextDouble(), scanner.nextDouble());
+            summand1 = scanner.nextDouble();
         }
+        System.out.println("Введите 2 слагаемое:");
+        if(scanner.hasNext()){
+            summand2 = scanner.nextDouble();
+        }
+        calc.sum(summand1, summand2);// Вызываются методы класса Calculator
+        System.out.println("Введите 1 слагаемое:");
+        if(scanner.hasNext()){
+            summandLong1 = scanner.nextLong();
+        }
+        System.out.println("Введите 2 слагаемое:");
+        if(scanner.hasNext()){
+            summandLong2 = scanner.nextLong();
+        }
+        calc.sum(summandLong1, summandLong2);
+        System.out.println("Введите 1 слагаемое:");
+        if(scanner.hasNext()){
+           summandInt1 = scanner.nextInt();
+        }
+        System.out.println("Введите 2 слагаемое:");
+        if(scanner.hasNext()){
+            summandInt2 = scanner.nextInt();
+        }
+        calc.sum(summandInt1, summandInt2);
 
+        double divisible = 0, divider = 0;
+        long divisibleLong = 0L, dividerLong = 0L;
+        int divisibleInt = 0, dividerInt = 0;
+        System.out.println("Введите делимое:");
+        if(scanner.hasNext()){
+            divisible = scanner.nextLong();
+        }
+        System.out.println("Введите делитель:");
+        if(scanner.hasNext()){
+            divider = scanner.nextLong();
+        }
+        divisibleLong = (long) divisible;
+        dividerLong = (long) divider;
+        divisibleInt = (int) divisible;
+        dividerInt = (int) divider;
+        calc.div(divisible, divider);
+        calc.div(divisibleLong, dividerLong);
+        calc.div(divisibleInt, dividerInt);
     }
 }
