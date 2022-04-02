@@ -25,6 +25,25 @@ public class Calculator {
         System.out.println("DivInteger = " + (a/b));
     }
     public void multiplication(){}//Умножение
+    public void multiplication(Double a, Double b){
+        System.out.println("multiplicationDouble = " + (a*b));
+    }
+    public void multiplication(Long a, Long b){
+        System.out.println("multiplicationLong = " + (a*b));
+    }
+    public void multiplication(Integer a, Integer b){
+        System.out.println("multiplicationInteger = " + (a*b));
+    }
+
     public void subtraction(){}//Вычитание
+    public void subtraction(Double a, Double b){
+        System.out.println("subtractionDouble = " + (a-b));
+    }
+    public void subtraction(Long a, Long b){
+        System.out.println("subtractionLong = " + (a-b));
+    }
+    public void subtraction(Integer a, Integer b){
+        System.out.println("subtractionInteger = " + (a-b));
+    }
 
 }

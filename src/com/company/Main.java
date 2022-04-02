@@ -99,5 +99,46 @@ public class Main {
         calc.div(divisible, divider);
         calc.div(divisibleLong, dividerLong);
         calc.div(divisibleInt, dividerInt);
+        //Умножение
+        double multipli1 = 0, multipli2 = 0;
+        long multipliLong1 = 0L, multipliLong2 = 0L;
+        int multipliInt1 = 0, multipliInt2 = 0;
+        System.out.println("Введите 1 множитель:");
+        if(scanner.hasNext()){
+            multipli1 = scanner.nextLong();
+        }
+        System.out.println("Введите 2 множитель:");
+        if(scanner.hasNext()){
+            multipli2 = scanner.nextLong();
+        }
+        multipliLong1 = (long) multipli1;
+        multipliLong2 = (long) multipli2;
+        multipliInt1 = (int) multipli1;
+        multipliInt2 = (int) multipli2;
+        calc.multiplication(multipli1, multipli2);
+        calc.multiplication(multipliLong1, multipliLong2);
+        calc.multiplication(multipliInt1, multipliInt2);
+
+        //Вычитание
+        double number1 = 0, number2 = 0;
+        long numberLong1 = 0L, numberLong2 = 0L;
+        int numberInt1 = 0, numberInt2 = 0;
+        System.out.println("Займемся вычитанием!");
+        System.out.println("Введите 1 число:");
+        if(scanner.hasNext()){
+            number1 = scanner.nextLong();
+        }
+        System.out.println("Введите 2 число:");
+        if(scanner.hasNext()){
+            number2 = scanner.nextLong();
+        }
+        numberLong1 = (long) number1;
+        numberLong2 = (long) number2;
+        numberInt1 = (int) number1;
+        numberInt2 = (int) number2;
+        calc.subtraction(number1, number2);
+        calc.subtraction(numberLong1, numberLong2);
+        calc.subtraction(numberInt1, numberInt2);
+
     }
 }
