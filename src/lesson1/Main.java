@@ -1,4 +1,4 @@
-package com.company;
+package lesson1;
 
 import java.util.Scanner;
 import lesson2.Calculator;
@@ -22,8 +22,8 @@ public class Main {
         System.out.println();
 
         int number = 10500;
-        double result = (number/10)/10;
-        System.out.println("result = " + result);
+        double result = ((double)number/10D)/10D;//Число number имеет тип Double.
+        System.out.println("result(number = 10500) = " + result);
         System.out.println();
 
         result = 3.6*4.1*5.9;
@@ -35,9 +35,9 @@ public class Main {
             System.out.println(scanner.next());
             System.out.println(scanner.next());
             System.out.println(scanner.nextInt());
-
+            System.out.println("Проверка на четность!");
             int b = scanner.nextInt();
-            if(b%2 == 0){
+            if(b%2 == 0 && b <=100){//Добавил условие для проверки на четность и принадлежность к диапазону.
                 System.out.println("Четное");
             }
             if(b%2 != 0){
@@ -120,78 +120,25 @@ public class Main {
         calc.multiplication(multipliInt1, multipliInt2);
 
         //Вычитание
-        double number1 = 0, number2 = 0;
+        double numberDouble1 = 0D;//Так?
+        double numberDouble2 = 0D;
         long numberLong1 = 0L, numberLong2 = 0L;
         int numberInt1 = 0, numberInt2 = 0;
         System.out.println("Займемся вычитанием!");
         System.out.println("Введите 1 число:");
         if(scanner.hasNext()){
-            number1 = scanner.nextDouble();
+            numberDouble1 = scanner.nextDouble();
         }
         System.out.println("Введите 2 число:");
         if(scanner.hasNext()){
-            number2 = scanner.nextDouble();
+            numberDouble2 = scanner.nextDouble();
         }
-        numberLong1 = (long) number1;
-        numberLong2 = (long) number2;
-        numberInt1 = (int) number1;
-        numberInt2 = (int) number2;
-        calc.subtraction(number1, number2);
+        numberLong1 = (long) numberDouble1;
+        numberLong2 = (long) numberDouble2;
+        numberInt1 = (int) numberDouble1;
+        numberInt2 = (int) numberDouble2;
+        calc.subtraction(numberDouble1, numberDouble2);
         calc.subtraction(numberLong1, numberLong2);
         calc.subtraction(numberInt1, numberInt2);
-
-        System.out.println("Определяем класс Person");
-        class Person{
-
-            String lastname;//Фамилия
-            String firstname;//Имя
-            String patronymic;//Отчество
-            int age;        // Возраст
-            double height;//Рост
-            double weight;//Вес
-            public void Person()
-            {
-                lastname = "Undefined";
-                age = 22;
-                System.out.println("По умолчанию Person это " + lastname + ", " + age + " года");
-            }
-            public void fullperson(String l, String f, String p, int a, double b, double c)
-            {
-                lastname = l;
-                firstname = f;
-                patronymic = p;
-                age = a;
-                height = b;
-                weight = c;
-                System.out.println(l);
-                System.out.println(f);
-                System.out.println(p);
-                System.out.println("Возраст: " + a);
-                System.out.println("Рост: " + b);
-                System.out.println("Вес: " + c);
-            }
-        }
-        Person person = new Person();//Создается экземпляр класса Person
-        System.out.println("Определяем параметры для класса Person");
-        String lastname = null;//Фамилия
-        String firstname = null;//Имя
-        String patronymic = null;//Отчество
-        int age = 2;        // Возраст
-        double height = 180;//Рост
-        double weight = 99;//Вес
-
-        System.out.println("Введите фамилию:");
-        if(scanner.hasNext()){
-            lastname = scanner.next();
-        }
-        System.out.println("Введите имя:");
-        if(scanner.hasNext()){
-            firstname = scanner.next();
-        }
-        System.out.println("Введите возраст:");
-        if(scanner.hasNext()){
-            age = scanner.nextInt();
-        }
-        person.fullperson(lastname, firstname, patronymic, age, height, weight);
 }
 }

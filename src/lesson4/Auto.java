@@ -33,19 +33,52 @@ public class Auto {
                 "." + " Вес: " + weight;
         return this.str;
     }
+    //Создаются геттеры и сеттеры
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public String getStr() {
+        return str;
+    }
+
+    public void setStr(String str) {
+        this.str = str;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
 
     public static void main(String[] args) {
         //Добавляем два объекта
         Auto auto1 = new Auto();
         Auto auto2 = new Auto();
 
-        auto1.color = "red";
-        auto1.Name = "Audi";
-        auto1.weight = 1500;
+        auto1.setColor("red");//Установка полей через сеттеры.
+        auto1.setName("Audi");
+        auto1.setWeight(1500);
 
-        auto2.color = "Blue";
-        auto2.Name = "Chevrolet";
-        auto2.weight = 1890;
+        auto2.setColor("Blue");
+        auto2.setName("Chevrolet");
+        auto2.setWeight(1890);
 
 System.out.println(auto1.outputAuto());//Выводим присвоенные значения
 System.out.println(auto2.outputAuto());

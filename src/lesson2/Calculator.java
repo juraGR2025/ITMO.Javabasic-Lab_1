@@ -1,7 +1,5 @@
 package lesson2;
 
-import java.util.Scanner;
-
 public class Calculator {
 
     public void sum(){}//Сумма
@@ -19,10 +17,12 @@ public class Calculator {
         System.out.println("DivDouble = " + (a/b));
     }
     public void div(Long a, Long b){
-        System.out.println("DivLong = " + (a/b));
+        //При делении 2/3 будет 0 (дробная часть у отбрасывается)
+        System.out.println("DivLong = " + (a*1.0/b));//А так получим Double.
     }
     public void div(Integer a, Integer b){
-        System.out.println("DivInteger = " + (a/b));
+        //При делении 2/3 будет 0 (дробная часть отбрасывается)
+        System.out.println("DivInteger = " + (a*1.0/b));//А так получим Double.
     }
     public void multiplication(){}//Умножение
     public void multiplication(Double a, Double b){
