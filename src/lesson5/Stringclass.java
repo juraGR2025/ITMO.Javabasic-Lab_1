@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class Stringclass {
     //1.Написать метод для поиска самой длинной строки.
-    public static void stringComparison(){
+    public static void stringComparison(String s0, String s1, String s2, String s3){
         String [] str = new String[4];
-        str[0] = "1 строка==============";
-        str[1] = "2 строка";
-        str[2] = "Другая строка";
-        str[3] = "Еще одна строка";
+        str[0] = s0;//"1 строка==============";
+        str[1] = s1;//"2 строка";
+        str[2] = s2;//"Другая строка";
+        str[3] = s3;//"Еще одна строка";
         String longstr = str[0];
         for (int i = 0; i < str.length; i++) {
             if (i<str.length-1){
@@ -32,14 +32,14 @@ public static void wordPalindrome(){
 
     StringBuilder builder = new StringBuilder(str);
     rts = builder.reverse().toString();
-
-    if(str.equals(rts))System.out.println("Палиндром!");
+//Сравнение строк без учета чувствительности к регистру.
+    if(str.equalsIgnoreCase(rts))System.out.println("Палиндром!");
     else System.out.println("Никакой не палиндром!");
 }
 //3.Напишите метод, заменяющий в тексте все вхождения слова «бяка» на «[вырезано цензурой]».
-public static void byakiSearch(){
-        String text = "Бяка! Бяка! Бяка! И снова: не то! И бяка! И бяка! И опять бяка!";
-        String[]str = text.split(" ");
+public static void byakiSearch(String s){
+
+        String[]str = s.split(" ");
 
         StringBuilder builder = new StringBuilder();
         String buffer1, buffer2;
@@ -91,9 +91,14 @@ public static void stringSearch(){
 
     }
     public static void main(String[] args) {
-        //stringComparison();
-        //wordPalindrome();
-        //byakiSearch();
+        String s0 = "1 строка";
+        String s1 = "2 строка";
+        String s2 = "Другая строка";
+        String s3 = "Еще одна строка";
+        stringComparison(s0, s1, s2, s3);
+        wordPalindrome();
+        String s = "Бяка! Бяка! Бяка! И снова: бяка! И бяка! И бяка! И опять бяка!";
+        byakiSearch(s);
         //stringSearch();
         invertingAstring();
     }
