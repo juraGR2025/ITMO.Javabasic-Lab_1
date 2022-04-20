@@ -4,7 +4,7 @@ package lesson6;
 //●	реализация функции для вывода информации;
 //●	строковое поле «название банка»;
 //●	конструктор для установки всех значений;
-public class AbstractClient extends AbstractHuman{
+public class Client extends AbstractHuman{
     private String bankName;
 
     public void setBankName(String bankName) {
@@ -19,7 +19,7 @@ public class AbstractClient extends AbstractHuman{
         return s;
     }
 
-    public AbstractClient(String firstName, String lastName, String bankName) {
+    public Client(String firstName, String lastName, String bankName) {
         super(firstName, lastName);
         this.bankName = bankName;
     }

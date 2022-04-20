@@ -10,30 +10,30 @@ public class AbstractClassesMain implements IBankName{
     static String firstName = null;
     static String lastName = null;
     static String bankName = null;
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args){
+            Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите имя:");
-        if (scanner.hasNext()){
-            firstName = scanner.next();
-        }
-        System.out.println("Введите фамилию:");
-        if (scanner.hasNext()){
-            lastName = scanner.next();
-        }
-        System.out.println("Введите название банка:");
-        if (scanner.hasNext()){
-            bankName = scanner.next();
-        }
-        AbstractClient client = new AbstractClient(firstName, lastName, bankName);
-        System.out.println(client.getAll());
+            System.out.println("Введите имя:");
+            if (scanner.hasNext()) {
+                firstName = scanner.next();
+            }
+            System.out.println("Введите фамилию:");
+            if (scanner.hasNext()) {
+                lastName = scanner.next();
+            }
+            System.out.println("Введите название банка:");
+            if (scanner.hasNext()) {
+                bankName = scanner.next();
+            }
+            Client client = new Client(firstName, lastName, bankName);
+            System.out.println(client.getAll());
 
-        BankEmployee bemp = new BankEmployee(firstName, lastName, bankName);
-        System.out.println(bemp.getAll());
+            BankEmployee bemp = new BankEmployee(firstName, lastName, bankName);
+            System.out.println(bemp.getAll());
 
-        System.out.println("Новый банк!");
-        bemp.setBankName("money network");
-        System.out.println(bemp.bankName);
-
+            System.out.println("Новый банк!");
+            bemp.setBankName("money network");
+            System.out.println(bemp.bankName);
         }
+
 }
