@@ -18,10 +18,10 @@ public class IOstreams {
         }
 
     }
-//2.Написать метод, который записывает в файл строку, переданную параметром.
+    //2.Написать метод, который записывает в файл строку, переданную параметром.
     public static void writesToAfile(String s){
         File file2 = new File("files/file2.txt");
-              FileWriter fr = null;
+        FileWriter fr = null;
         try {
             fr = new FileWriter(file2);
             fr.write(s);
@@ -69,7 +69,7 @@ public class IOstreams {
                     is2.close();
                 }
                 if(os != null){
-os.close();
+                    os.close();
                 }
             } catch (Exception e) {
                 e.getMessage();
@@ -98,14 +98,15 @@ os.close();
             while((ln = br.readLine()) != null)
             {
                 bw.write(ln
-                        .replace("ф", "$")
-                        .replace("а", "$")
-                        .replace("и", "$")
+                        .replace(".", "$")
+                        .replace("!", "$")
+                        .replace(",", "$")
                         .replace(" ", "$")
-                        .replace("1", "$")
-                        .replace("2", "$")
-                        .replace("3", "$")
-                        .replace("4", "$")
+                        .replace(":", "$")
+                        .replace(";", "$")
+                        .replace("\'", "$")
+                        .replace("\"", "$")
+                        .replace("\'", "$")
                 );
                 bw.newLine();
             }
