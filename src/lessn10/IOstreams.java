@@ -98,15 +98,15 @@ public class IOstreams {
             while((ln = br.readLine()) != null)
             {
                 bw.write(ln
-                        .replace(".", "$")
-                        .replace("!", "$")
-                        .replace(",", "$")
-                        .replace(" ", "$")
-                        .replace(":", "$")
-                        .replace(";", "$")
-                        .replace("\'", "$")
-                        .replace("\"", "$")
-                        .replace("\'", "$")
+//                        .replace(".", "$")
+//                        .replace("!", "$")
+//                        .replace(",", "$")
+//                        .replace(" ", "$")
+//                        .replace(":", "$")
+//                        .replace(";", "$")
+//                        .replace("\'", "$")
+//                        .replace("\"", "$")
+                        .replaceAll("[^а-яА-Яa-zA-Z\\d]", "\\$")
                 );
                 bw.newLine();
             }
@@ -130,7 +130,7 @@ public class IOstreams {
 
     public static void main(String[] args)  {
         aMethodThatReads();
-        writesToAfile("3.\tИспользуя решение 1 и 2, напишите метод, который склеивает два текстовый файла в один.");
+        writesToAfile("3. Using solution 1 and 2, write a method that glues two text files together.");
         gluingFiles();
         replacingCharacters();
     }
