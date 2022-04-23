@@ -10,7 +10,11 @@ public class IOstreams {
         File file1 = new File("files/file1.txt");
         try (BufferedReader reader = new BufferedReader(new FileReader(file1))){
             String content = null;
+            int count = 0;
+            System.out.println("Список строк:");
             while ((content = reader.readLine()) != null){
+                count = count + 1;
+                System.out.println("Строка № " + count);
                 System.out.println(content);
             }
         } catch (IOException e) {
