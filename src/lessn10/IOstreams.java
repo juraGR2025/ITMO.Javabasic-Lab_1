@@ -3,24 +3,24 @@ package lessn10;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 public class IOstreams {
     //1.Написать метод, который читает текстовый файл и возвращает его в виде списка строк.
-    public static void aMethodThatReads(){
-        File file1 = new File("files/file1.txt");
-        try (BufferedReader reader = new BufferedReader(new FileReader(file1))){
+        public static List<String> aMethodThatReads(File file) {
+            file = new File("files/file1.txt");
+        List fileStringList = new ArrayList<String>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))){
             String content = null;
-            int count = 0;
-            System.out.println("Список строк:");
             while ((content = reader.readLine()) != null){
-                count = count + 1;
-                System.out.println("Строка № " + count);
-                System.out.println(content);
+                fileStringList.add(content);
             }
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
+        return fileStringList;//Возвращает список!
     }
     //2.Написать метод, который записывает в файл строку, переданную параметром.
     public static void writesToAfile(String s){
@@ -102,14 +102,6 @@ public class IOstreams {
             while((ln = br.readLine()) != null)
             {
                 bw.write(ln
-//                        .replace(".", "$")
-//                        .replace("!", "$")
-//                        .replace(",", "$")
-//                        .replace(" ", "$")
-//                        .replace(":", "$")
-//                        .replace(";", "$")
-//                        .replace("\'", "$")
-//                        .replace("\"", "$")
                         .replaceAll("[^а-яА-Яa-zA-Z\\d]", "\\$")
                 );
                 bw.newLine();
@@ -133,7 +125,8 @@ public class IOstreams {
                 e.getMessage();}}}
 
     public static void main(String[] args)  {
-        aMethodThatReads();
+        File file = new File("files/file1.txt");
+        System.out.println(aMethodThatReads(file));
         writesToAfile("3. Using solution 1 and 2, write a method that glues two text files together.");
         gluingFiles();
         replacingCharacters();
